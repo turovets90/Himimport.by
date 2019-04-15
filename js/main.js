@@ -53,6 +53,40 @@ $(document).ready(function(){
 
 
 
+    if($(".product_slider .product_item").length >3){
+        $('.product_slider').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: true,
+            dots:false,
+            infinite:false,
+            responsive: [
+
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+
+                {
+                    breakpoint: 575,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+            ]
+        });
+    }
+
+
+    $('.s_catalog .s_title').click(function(){
+        $('.s_catalog .s_nav').slideToggle();
+        $(this).toggleClass('act');
+    });
+
+
+
 
     /*
 
