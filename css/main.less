@@ -1193,6 +1193,7 @@ main{
     top: 0;
     bottom: 0;
     z-index: 1;
+    pointer-events: none;
   }
   .item{
     width: 20%;
@@ -1215,6 +1216,10 @@ main{
       width: 100%;
       display: inline-block;
       border:1px solid #F5F6F9;
+      &:hover, &:focus{
+        border:1px solid @green;
+        z-index: 2;
+      }
     }
     img{
       position: absolute;
@@ -1240,6 +1245,10 @@ main{
     margin-bottom: 43px;
   }
   .pr_item{
+    .transition(@transition_default);
+    &:hover{
+      .transform(translateY(-15px))
+    }
     .pr_item_head{
       @media (max-width:1200px){
         .flex();
