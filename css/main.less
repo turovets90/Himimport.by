@@ -2232,46 +2232,89 @@ h1.page_title{
     margin-bottom: 35px;
   }
 
-  .order_cost{
-    .field{
-      margin-bottom: 40px;
-    }
-    label{
-      font-size: 16px;
-      color: #FFFFFF;
+}
+.order_cost, .form{
+  .field{
+    margin-bottom: 40px;
+  }
+  label{
+    font-size: 16px;
+    color: #FFFFFF;
+    font-family: @ProximaNovaBold;
+    margin-bottom: 10px;
+    span{
+      color: @green;
       font-family: @ProximaNovaBold;
-      margin-bottom: 10px;
-      span{
-        color: @green;
-        font-family: @ProximaNovaBold;
-      }
     }
-    .form-control{
-      border:0;
-      .border-radius(0);
-      height: 50px;
-      padding: 0.375rem 1rem;
-      border-bottom: 2px solid #fff;
-      &:focus, &.act{
-        border-bottom: 2px solid #83BE57;
-      }
-      &::-webkit-input-placeholder{
-        font-size: 16px;
-        color: #A1A3B0;
-      }
-      &::-moz-placeholder{  font-size: 16px;
-        color: #A1A3B0;}
-      &::-ms-input-placeholder{  font-size: 16px;
-        color: #A1A3B0;}
-      &:-moz-placeholder{  font-size: 16px;
-        color: #A1A3B0;}
-      &:-ms-input-placeholder{  font-size: 16px;
-        color: #A1A3B0;}
+  }
+  .form-control{
+    border:0;
+    .border-radius(0);
+    height: 50px;
+    padding: 0.375rem 1rem;
+    border-bottom: 2px solid #fff;
+    &:focus, &.act{
+      border-bottom: 2px solid #83BE57;
     }
+    &::-webkit-input-placeholder{
+      font-size: 16px;
+      color: #A1A3B0;
+    }
+    &::-moz-placeholder{  font-size: 16px;
+      color: #A1A3B0;}
+    &::-ms-input-placeholder{  font-size: 16px;
+      color: #A1A3B0;}
+    &:-moz-placeholder{  font-size: 16px;
+      color: #A1A3B0;}
+    &:-ms-input-placeholder{  font-size: 16px;
+      color: #A1A3B0;}
+  }
+  textarea.form-control{
+    height: 99px;
   }
 }
 
-
 .related_products{
   padding-top: 70px;
+}
+
+
+
+.modal{
+  .modal-dialog{
+    max-width:  300px;
+    .modal-content{
+      border:0;
+      .border-radius(0);
+      background: @dark;
+
+      .order_cost .field, .form .field {
+        margin-bottom: 20px;
+      }
+
+      .close{
+        opacity: 1;
+        &:hover, &:focus{
+          opacity: 0.5;
+        }
+      }
+      .modal_title{
+        font-size: 20px;
+        line-height: 28px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        font-family: @ProximaNovaBold;
+      }
+      .modal-body{
+        padding: 50px 20px 58px;
+      }
+      .btn_default {
+        margin-top: 20px;
+        padding: 13px 45px;
+        width: 100%;
+        max-width: 100%;
+      }
+
+    }
+  }
 }
