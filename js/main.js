@@ -86,6 +86,44 @@ $(document).ready(function(){
     });
 
 
+    $('.tab_content #show_more').click(function(){
+        if($('.tab_content .more').is(':visible')){
+            $('.tab_content .more').slideUp();
+            $(this).text('Подробнее').removeClass('rotate');
+        }else{
+            $('.tab_content .more').slideDown();
+            $(this).text('Свернуть').addClass('rotate');
+        }
+    })
+
+    $('#show_specifications').click(function(){
+        $('.specifications_item').removeClass('hide');
+        $(this).hide();
+    });
+
+
+    $(function () {
+        $('input, textarea').each(function () {
+            $(this).blur(function(){
+                if(!this.value){
+                    $(this).removeClass('act');
+                }
+                else{
+                    $(this).addClass('act');
+                }
+            });
+            if ( !this.value ) {
+                $(this).removeClass('act');
+            }
+            else{
+                $(this).addClass('act');
+            }
+        });
+    });
+
+
+
+
 
 
     /*
