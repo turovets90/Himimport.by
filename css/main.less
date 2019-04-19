@@ -603,7 +603,7 @@ header{
         .flex();
         .ai-center();
         .j-center();
-        &.active{
+        &.active, &:hover{
           background: @green;
           color: #fff;
         }
@@ -2106,6 +2106,13 @@ h1.page_title{
       .ai-center();
       &:hover, &:focus{
         text-decoration: none;
+        .text{
+          span{
+            &:first-child{
+              color: @green;
+            }
+          }
+        }
       }
       @media (max-width:767px){
         margin-bottom: 47px;
@@ -2300,6 +2307,9 @@ h1.page_title{
   position: relative;
   padding-left: 0;
   padding-right: 23px;
+  &:hover, &:focus{
+    color: @green;
+  }
   &.rotate{
     &:before{
       .transform(rotate(-180deg));
@@ -2333,7 +2343,7 @@ h1.page_title{
   }
 
 
-  .title{
+  .title, .section_title{
     color: #fff;
     margin-bottom: 35px;
   }
@@ -2918,6 +2928,13 @@ main.eng{
     .ai-center();
     &:hover, &:focus{
       text-decoration: none;
+      .text{
+        span{
+          &:first-child{
+            color: @green;
+          }
+        }
+      }
     }
     @media (max-width:767px){
       margin-bottom: 47px;
@@ -2967,6 +2984,16 @@ main.eng{
     a.download{
       @media (max-width:1200px){
         margin-bottom: 20px;
+      }
+      &:hover, &:focus{
+        text-decoration: none;
+        .text{
+          span{
+            &:first-child{
+              color: @green;
+            }
+          }
+        }
       }
       picture{
       }
