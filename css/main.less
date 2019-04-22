@@ -1777,11 +1777,13 @@ h1.page_title{
   .tab_content>.tab-pane{
     display: block;
     height: 0;
+    pointer-events: none;
   }
 
   .tab_content>.tab-pane.active {
     height: auto;
     z-index: 9;
+    pointer-events: initial;
   }
 
 /***************************/
