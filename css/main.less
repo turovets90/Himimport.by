@@ -258,8 +258,15 @@ header{
     @media (min-width:992px){
       padding-top: 0;
       .logo_block{
-        .flex();
-        .ai-center();
+        display: none;
+      }
+      .main_menu ul.nav>li>a {
+        //padding: 22px 10px;
+      }
+      .right_col{
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
       }
       .main_menu{
         border:0;
@@ -270,6 +277,31 @@ header{
         .search_block{
           display: none;
         }
+
+        .phones{
+          display: block;
+          margin-bottom: 0;
+          li{
+            margin-bottom: 0;
+            &:first-child{
+              display: none;
+            }
+            .phone{
+              padding-left: 0;
+              .icon{
+                display: none;
+              }
+              .text{
+                span{
+                  &:first-child{
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+
       }
       .h_row_1{
           display: none;
@@ -569,7 +601,10 @@ header{
 
 
   .btn_default{
-    margin-bottom: 40px;
+    @media (max-width:991px){
+      margin-bottom: 40px;
+    }
+
       @media (min-width:576px){
         display: none;
       }
@@ -1506,10 +1541,10 @@ footer{
   background: url(../img/page_bg.svg);
   background-size: cover;
   background-position: center;
-  padding-top: 70px;
+  padding-top: 30px;
   padding-bottom: 100px;
   @media (max-width:1200px){
-    padding-top: 45px; padding-bottom: 60px;
+    padding-top: 20px; padding-bottom: 60px;
   }
 }
 
@@ -1522,13 +1557,13 @@ h1.page_title{
   color: #213139;
   font-family: @ProximaNovaBold;
   padding-bottom: 15px;
-  margin-top: 65px;
+  margin-top: 30px;
   margin-bottom: 70px;
   @media (max-width:1200px){
     font-size: 24px;
     line-height: 36px;
     padding-bottom: 5px;
-    margin-top: 27px;
+    margin-top: 20px;
     margin-bottom: 30px;
   }
   &:before{
@@ -1576,7 +1611,7 @@ h1.page_title{
 
     a{
       font-size: 16px;
-      color: #BCBCBC;
+      color: #213139;
       display: inline-block;
       padding: 0 6px;
       text-decoration: none;
@@ -2680,14 +2715,17 @@ main.eng{
   .about_banner_caption{
     background: @dark;
     width: 100%;
-    max-width: 551px;
-    font-size: 16px;
+    max-width: 600px;
+    font-size: 18px;
     line-height: 24px;
     position: absolute;
     bottom: -95px;
     right: 98px;
     color: #FFFFFF;
     padding: 57px 30px 35px;
+    @media (min-width:1200px){
+      font-size: 22px;
+    }
     @media (max-width:1200px){
       bottom: 0;
       right:0;
@@ -2829,7 +2867,7 @@ main.eng{
 .contact_row2{
  // margin-bottom: -105px;
   .item{
-    background: #fff;
+    background: rgb(248, 248, 248);
     width: 100%;
     height: 205px;
     .flex();
@@ -3055,4 +3093,26 @@ main.eng{
     }
   }
 
+}
+
+
+
+.scrolltop{
+  position: fixed;
+  z-index: 9999;
+  right: 50px;
+  bottom: 50px;
+  display: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i0KHQu9C+0LlfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA4MCA4MCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgODAgODA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+DQoJLnN0MHtmaWxsOiM3Nzc3Nzc7fQ0KPC9zdHlsZT4NCjxnPg0KCTxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zNTkuMDAwMDAwLCAtNjg0LjAwMDAwMCkiPg0KCQk8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNTkuMDAwMDAwLCA2ODQuMDAwMDAwKSI+DQoJCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNTksNDljLTAuNywwLjctMS4zLDEtMi4zLDFjLTEsMC0xLjctMC4zLTIuMy0xTDQwLDM0LjdMMjUuNyw0OWMtMS4zLDEuMy0zLjMsMS4zLTQuNywwDQoJCQkJYy0xLjMtMS4zLTEuMy0zLjMsMC00LjdsMTYuNy0xNi43YzEuMy0xLjMsMy4zLTEuMyw0LjcsMEw1OSw0NC4zQzYwLjMsNDUuNyw2MC4zLDQ3LjcsNTksNDkgTTQwLDBDMTgsMCwwLDE4LDAsNDBzMTgsNDAsNDAsNDANCgkJCQlzNDAtMTgsNDAtNDBTNjIsMCw0MCwwIi8+DQoJCTwvZz4NCgk8L2c+DQo8L2c+DQo8L3N2Zz4NCg==');
+  background-position: center;
+  @media (max-width:767px){
+    width: 40px;
+    height: 40px;
+    right:20px;
+    bottom: 20px;
+  }
 }
